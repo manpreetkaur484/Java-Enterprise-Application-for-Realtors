@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Commercial Property</title>
+<link rel="stylesheet" media="all" href="../static/nc.css" th:href="@{/nc.css}">
+</head>
+<body>
+	<div class="heading"><h1>Add Commercial Property</h1></div>
+	<br><br>
+	<div class="box1">
+		<div><button id="btn">
+		<a href="/realtor/view/property/commercial">View Commercial Table</a>
+		</button>
+		</div>
+		<div>
+			<button id="btn">
+				<a href="/">Go Back</a>
+			</button>
+		</div>
+		<div>
+		<br>
+			<button id="btn">
+				<a href="/search/property/commercial">Search</a>
+			</button>
+		</div>			
+	</div>
+	<br>
+	<div class="box2">
+
+	<form action="#" th:action="@{/addCommercial}" th:object="${commercial}" method="get">
+Address:  <input type="text" th:field="*{address}" /><br><br>
+
+		Property Type:<select th:field="*{propertyType}">
+			          <option th:each="p:*{propertyTypes}" th:value="${p}" th:text="${p}"/>
+		              </select><br><br>
+		             
+	  Community Type:<select th:field="*{communityType}">
+	                  <option th:each="c:*{communityTypes}" th:value="${c}" th:text="${c}" />
+	                  </select><br><br>
+	                  
+		Floor Space:<select th:field="*{floorSpace}">
+		              <option th:each="f:*{floorSpaces}" th:value="${f}" th:text="${f}" />
+		              </select><br><br>
+		              
+	     Land Size: <select th:field="*{landSize}">
+	                  <option th:each="l:*{landSizes}" th:value="${l}" th:text="${l}" />
+	                </select><br><br>
+	                
+		Amenities:  <input type="text" th:field="*{amenities}" /><br><br>
+		
+		 Annual Tax:<input type="text" th:field="*{annualTax}" /><br><br> 
+		 
+   Transaction Type:<select th:field="*{transactionType}">
+                    <option th:each="t:*{transactionTypes}" th:value="${t}" th:text="${t}" />
+                    </select>
+                    <br><br><br>
+                    <input type="Submit" value="Add Property" id="btn"/>
+	</form>
+	</div>
+<br>
+<br>
+	<form method="post" th:action="@{/logout}">
+<input type="submit" id="logout-submit" name="logout-submit" value="logout" class="btn">
+</form>
+</body>
+</html>

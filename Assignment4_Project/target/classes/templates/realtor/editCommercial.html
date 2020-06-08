@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Commercial Property</title>
+<link rel="stylesheet" media="all" href="../static/Vcss.css" th:href="@{/Vcss.css}"/>
+</head>
+<body>
+<div class="heading"><h1>Edit Commercial Property</h1></div>
+	<br><br>
+	<div class="box1">
+		<div><button id="btn">
+		<a href="/view/property/commercial">View Commercial Table</a>
+		</button>
+		</div>
+		<div>
+			<button id="btn">
+				<a href="/add/property/commercial">Go Back</a>
+			</button>
+		</div>
+		<div>
+		<br>
+			<button id="btn">
+				<a href="/search/property/commercial">Search</a>
+			</button>
+		</div>			
+	</div>
+	<br>
+<div class="box2">
+	<form action="#" th:action="@{/modifyCommercial}" th:object="${commercial}" method="get">
+<input type="hidden" name="id" th:value="${commercial.id}">
+Address:  <input type="text" th:field="*{address}" /><br><br>
+		Property Type:<select th:field="*{propertyType}">
+			          <option th:each="p:*{propertyTypes}" th:value="${p}" th:text="${p}"/>
+		              </select><br><br>
+		             
+	  Community Type:<select th:field="*{communityType}">
+	                  <option th:each="c:*{communityTypes}" th:value="${c}" th:text="${c}" />
+	                  </select><br><br>
+	                  
+		Floor Space:<select th:field="*{floorSpace}">
+		              <option th:each="f:*{floorSpaces}" th:value="${f}" th:text="${f}" />
+		              </select><br><br>
+		              
+	     Land Size: <select th:field="*{landSize}">
+	                  <option th:each="l:*{landSizes}" th:value="${l}" th:text="${l}" />
+	                </select><br><br>
+	                
+		Amenities:  <input type="text" th:field="*{amenities}" /><br><br>
+		
+		 Annual Tax:<input type="text" th:field="*{annualTax}" /><br><br> 
+		 
+   Transaction Type:<select th:field="*{transactionType}">
+                    <option th:each="t:*{transactionTypes}" th:value="${t}" th:text="${t}" />
+                    </select>
+                    <br>
+                    <input type="Submit" value="Edit Property" id="btn"/>
+	</form>
+	</div>
+<br>
+</body>
+</html>

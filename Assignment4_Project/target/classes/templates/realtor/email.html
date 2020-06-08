@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Send Email</title>
+<link rel="stylesheet" media="all" href="../static/nc.css" th:href="@{/nc.css}">
+</head>
+<body>
+<h1>Send email</h1>
+<br>
+<br>
+<form th:action = "@{/sendemail}">
+Enter email Address:<input type = "text" name = "email"><br><br>
+Enter the message:<input type = "text" name = "message"><br><br>
+<input type = "Submit" value = "Send Email" id="btn">
+</form>
+</body>
+</html>

@@ -1,0 +1,110 @@
+@import
+	url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+*
+		{
+			font-family: "Cabin";
+		}
+
+
+html{
+	background-image: url(candonium.JPG);
+	background-size: cover ;
+	
+}
+
+#header{
+	background-color: rgba(20,10,5,0.8);
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 53, 64);
+    border-radius: 15px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.411);
+    color: white;
+   
+}
+.btn, #btn {
+	border: 1.5px solid whitesmoke;
+	border-radius: 10px;
+	background-color: whitesmoke;
+	transition: 0.4s;
+	color: #000000;
+}
+nav {
+	width: 100%;
+	text-align: center;
+	padding: 40px;
+}
+nav a {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	margin: 20px;
+	text-transform:uppercase;
+	text-decoration: none;
+	font-family: apple chancery;
+}
+nav a:hover {
+	color: purple;
+}
+.box {
+	width:350px;
+	float: left;
+	margin: 40px;
+	text-align: center;
+	margin-left: 80px;
+	border: 2px solid orange;
+	background-color: rgba(20,10,5,0.8);
+}
+.box a {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	margin: 20px;
+	text-transform:uppercase;
+	text-decoration: none;
+}
+.box a:hover {
+	color: purple;
+}
+.box2 {
+	width:350px;
+	float: left;
+	margin: 40px;
+	text-align: center;
+	margin-top:170px;
+	margin-left: 40px;
+	border: 2px solid orange;
+	background-color: rgba(20,10,5,0.8);
+}
+.box2 a {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	margin: 20px;
+	text-transform:uppercase;
+	text-decoration: none;
+}
+.box2 a:hover {
+	color: purple;
+}
+.box3 {
+	width:400px;
+	float: right;
+	margin: 40px;
+	text-align: center;
+	margin-top: 270px;
+	margin-left: 110px;
+	border: 2px solid orange;
+	background-color: rgba(20,10,5,0.8);
+}
+.box3 a {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	margin: 20px;
+	text-transform:uppercase;
+	text-decoration: none;
+}
+.box3 a:hover {
+	color: purple;
+}

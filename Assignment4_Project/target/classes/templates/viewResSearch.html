@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Residential Search Property</title>
+<link rel="stylesheet" media="all" href="../static/Vcss.css" th:href="@{/Vcss.css}"/>
+</head>
+<body>
+<div class="box1">
+		<div>
+			<h1>Residential Property Search Results</h1>
+		</div>
+		<div>
+			<button id="btn">
+				<a href="/add/property/residential">Go Back</a>
+			</button>
+		</div>
+	</div>
+
+<table>
+			<tr id="row1">
+			<th>Id</th>
+			    <th><a href = "https://www.google.com/maps/d/u/0/embed?mid=1lB5Bx4v2cmQ69sy_F6uMZEQYRqhFj5S-" width="640" height="480">Address</a></th>
+				<th>Property Type</th>
+				<th>Building Type</th>
+				<th>Community Type</th>
+				<th>Annual Tax</th>
+				<th>Parking Space</th>
+				<th>Bedrooms</th>
+				<th>Bathrooms</th>
+				<th>Basement</th>
+				<th>Swimming Pool</th>
+				<th>Amenities</th>
+				<!--  <th>Edit</th>
+				<th>Delete</th>-->
+			</tr>
+			<tr th:each="res : ${residential}">
+			    <td th:text="${res.id}"></td>
+			    <td th:text="${res.address}"></td>
+				<td th:text="${res.propertyType}"></td>
+				<td th:text="${res.buildingType}"></td>
+				<td th:text="${res.communityType}"></td>
+				<td th:text="${res.annualTax}"></td>
+				<td th:text="${res.parkingSpaces}"></td>
+				<td th:text="${res.bedrooms}"></td>
+				<td th:text="${res.bathrooms}"></td>
+				<td th:text="${res.basement}"></td>
+				<td th:text="${res.swimmingPool}"></td>
+				<td th:text="${res.amenities}"></td>
+				<!--  <td><a href="" th:href="@{/edit/Res/{id}(id=${res.id})}">EDIT
+				</a></td>
+				<td><a href="" th:href="@{/delete/Res/{id}(id=${res.id})}">DELETE</a></td>-->
+			</tr>
+		</table>
+		<br> <a th:href="@{/add/property/residential}">Add Residential Property</a>
+		<br>
+		<a th:href="@{/}">Go to Home page</a>
+<br>
+		<form method="post" th:action="@{/logout}">
+<input type="submit" id="logout-submit" name="logout-submit" value="logout" class="btn">
+</form>
+
+</body>
+</html>

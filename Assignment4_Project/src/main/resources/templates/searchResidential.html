@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Residential Property</title>
+<link rel="stylesheet" media="all" href="../static/nc.css" th:href="@{/nc.css}">
+</head>
+<body>
+<div class="heading"><h1>Search Residential Property</h1></div>
+	<br><br>
+	<div class="box1">
+		<div><button id="btn">
+		<a href="/view/property/residential">View Residential Table</a>
+		</button>
+		</div>
+		<div>
+			<button id="btn">
+				<a href="/add/property/residential">Go Back</a>
+			</button>
+		</div>	
+		
+	</div>
+	<div class="box2">
+<form action="#" th:action="@{/search/residential}" th:object="${residential}" method="get">
+Address:  <input type="text" th:field="*{address}" /><br><br>
+<p>Property Type:<select th:field="*{propertyType}">
+			          <option th:each="p:*{propertyTypes}" th:value="${p}" th:text="${p}"/>
+		              </select><br><br>
+		</p>
+		 
+		 Bedrooms:<input type="text" th:field="*{bedrooms}" /><br><br>
+	     Bathrooms:<input type="text" th:field="*{bathrooms}" /><br><br>
+	                  
+		Basement:<select th:field="*{basement}">
+		              <option th:each="bs:*{basements}" th:value="${bs}" th:text="${bs}" />
+		              </select><br><br>
+		              
+	   Swimming Pool: <select th:field="*{swimmingPool}">
+	                  <option th:each="s:*{swimmingPools}" th:value="${s}" th:text="${s}" />
+	                </select><br><br>
+<input type="submit" value="Search"/>
+</form>
+</div>
+<form method="post" th:action="@{/logout}">
+<input type="submit" id="logout-submit" name="logout-submit" value="logout" class="btn">
+</form>
+</body>
+</html>

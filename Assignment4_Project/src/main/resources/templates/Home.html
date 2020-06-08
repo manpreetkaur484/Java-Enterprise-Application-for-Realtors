@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Index</title>
+<link rel="stylesheet" href="../static/mainpage.css" th:href="@{/mainpage.css}">
+</head>
+<body>
+<div id="header"><center><h1>Real Estate Services</h1></center></div>
+<nav>
+  	<a th:href="@{/search/property/residential}">Search Residential Property</a>
+  	<a th:href="@{/search/property/commercial}">Search Commercial Property</a>
+  	<a th:href="@{/register}">Register New User</a>
+  	</nav>
+<div class ="box">
+<a th:href="@{add/property/commercial}">Add Commercial Property</a>
+<br>
+<a th:href="@{/add/property/residential}">Add Residential Property</a>
+</div>
+<div class="box2">
+<a th:href="@{/email}">Send Email to Buyer</a>
+<br>
+<a th:href="@{/view}">View Properties</a>
+<br>
+<a th:href="@{/mortgage}">Mortgage Calculator</a>
+</div>
+<div class ="box3">
+<a th:href="@{/dummy/records/residential}">Generate Residential Records</a>
+<br>
+<a th:href="@{/dummy/records/commercial}">Generate Commercial Records</a>
+</div>
+
+</body>
+</html>

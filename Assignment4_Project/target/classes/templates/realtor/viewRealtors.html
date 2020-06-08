@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Realtor</title>
+<link rel="stylesheet" href="../static/mainpage.css" th:href="@{/mainpage.css}">
+</head>
+<body>
+<div id="header"><center><h1>Welcome Realtors!</h1></center></div>
+<br>
+<br>
+<div class ="box">
+<a th:href="@{/realtor/view/property/residential}">View Residential Property</a>
+<br>
+
+<a th:href="@{/realtor/view/property/commercial}">View Commercial Property</a>
+<br>
+
+</div>
+<div class="box3">
+<a th:href="@{/search/property/residential}">Search Residential Property</a>
+<br>
+
+<a th:href="@{/search/property/commercial}">Search Commercial Property</a>
+<br>
+
+<br></div>
+<div class="box2">
+		<br>
+		<a th:href="@{/}"><h2>Go to Home page</h2></a><br>
+		<form method="post" th:action="@{/logout}">
+<input type="submit" id="logout-submit" name="logout-submit" value="logout" class="btn">
+
+</div>
+<br>
+</form>
+</body>
+</html>

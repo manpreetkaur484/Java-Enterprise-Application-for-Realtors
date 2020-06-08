@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Buyers</title>
+<link rel="stylesheet" href="../static/mainpage.css" th:href="@{/mainpage.css}">
+</head>
+<body>
+<div id="header"><center><h1>Welcome Buyers!</h1></center></div>
+
+<br>
+<br>
+<div class ="box">
+<a th:href="@{/buyer/view/property/residential}">View Residential Property</a>
+<br>
+<a th:href="@{/buyer/view/property/commercial}">View Commercial Property</a>
+</div>
+
+<div class ="box3">
+<a th:href="@{/search/property/commercial}">Search Commercial Property</a>
+<br>
+<a th:href="@{/search/property/residential}">Search Residential Property</a>
+</div>
+<div class="box2">
+<a th:href="@{/}">Go to Home page</a>
+<br>
+<form method="post" th:action="@{/logout}">
+<input type="submit" id="logout-submit" name="logout-submit" value="logout" class="btn">
+</form>
+</div>
+
+		<br>
+		
+<br>
+		
+</body>
+</html>

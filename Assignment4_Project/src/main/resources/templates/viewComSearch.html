@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Commercial</title>
+<link rel="stylesheet" media="all" href="../static/Vcss.css" th:href="@{/Vcss.css}"/>
+</head>
+<body>
+<div class="box1">
+		<div>
+			<h1>Commercial Property Search Results</h1>
+		</div>
+		<div>
+			<button id="btn">
+				<a href="/add/property/commercial">Go Back</a>
+			</button>
+		</div>
+	</div>
+
+
+<table>
+			<tr id="row1">
+			    <th>Id</th>
+			    <th><a href = "https://www.google.com/maps/d/u/0/embed?mid=1CYrq6Pap8G84uAHmQivr6_IO7NyLlhT-" width="640" height="480">Address</a></th>
+				<th>Property Type</th>
+				<th>Community Type</th>
+				<th>Floor Space</th>
+				<th>Land Size</th>
+				<th>Amenities</th>
+				<th>Annual Tax</th>
+				<th>Transaction Type</th>
+				<!-- <th>Edit</th>
+				<th>Delete</th>-->
+			</tr>
+			<tr th:each="com : ${commercial}">
+			    <td th:text="${com.id}"></td>
+			    <td th:text="${com.address}"></td>
+				<td th:text="${com.propertyType}"></td>
+				<td th:text="${com.communityType}"></td>
+				<td th:text="${com.floorSpace}"></td>
+				<td th:text="${com.landSize}"></td>
+				<td th:text="${com.amenities}"></td>
+				<td th:text="${com.annualTax}"></td>
+				<td th:text="${com.transactionType}"></td>
+				<!--  <td><a href="" th:href="@{/edit/Com/{id}(id=${com.id})}">EDIT
+				</a></td>
+				<td><a href="" th:href="@{/delete/Com/{id}(id=${com.id})}">DELETE</a></td>-->
+			</tr>
+		</table>
+		<br> <a th:href="@{add/property/commercial}">Add Commercial Property</a>
+		<br>
+		<a th:href="@{/}">Go to Home page</a>
+<br>
+		<form method="post" th:action="@{/logout}">
+<input type="submit" id="logout-submit" name="logout-submit" value="logout" class="btn">
+</form>
+
+
+</body>
+</html>

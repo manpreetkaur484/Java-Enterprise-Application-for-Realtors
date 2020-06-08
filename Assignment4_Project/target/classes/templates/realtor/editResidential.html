@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Residential Property</title>
+<link rel="stylesheet" media="all" href="../static/nc.css" th:href="@{/nc.css}">
+</head>
+<body>
+<div class="heading"><h1>Edit Residential Property</h1></div>
+	<br><br>
+	<div class="box1">
+		<div><button id="btn">
+		<a href="/view/property/residential">View Residential Table</a>
+		</button>
+		</div>
+		<div>
+			<button id="btn">
+				<a href="/add/property/residential">Go Back</a>
+			</button>
+		</div>
+		<div>
+		<br>
+			<button id="btn">
+				<a href="/search/property/residential">Search</a>
+			</button>
+		</div>			
+	</div>
+	<br>
+	<form action="#" th:action="@{/modifyResidential}" th:object="${residential}" method="get">
+<input type="hidden" name="id"  th:value="${residential.id}">
+Address:  <input type="text" th:field="*{address}" /><br><br>
+		<p>Property Type:<select th:field="*{propertyType}">
+			          <option th:each="p:*{propertyTypes}" th:value="${p}" th:text="${p}"/>
+		              </select><br><br>
+		</p>
+		<p>
+		Building Type:<select th:field="*{buildingType}">
+			          <option th:each="b:*{buildingTypes}" th:value="${b}" th:text="${b}"/>
+		              </select><br><br>
+		 </p>                           
+	  Community Type:<select th:field="*{communityType}">
+	                  <option th:each="c:*{communityTypes}" th:value="${c}" th:text="${c}" />
+	                  </select><br><br>
+	    
+	    Annual Tax:<input type="text" th:field="*{annualTax}" /><br><br>    
+	Parking Spaces:<input type="text" th:field="*{parkingSpaces}" /><br><br> 
+	      Bedrooms:<input type="text" th:field="*{bedrooms}" /><br><br>
+	     Bathrooms:<input type="text" th:field="*{bathrooms}" /><br><br>
+	                  
+		Basement:<select th:field="*{basement}">
+		              <option th:each="bs:*{basements}" th:value="${bs}" th:text="${bs}" />
+		              </select><br><br>
+		              
+	   Swimming Pool: <select th:field="*{swimmingPool}">
+	                  <option th:each="s:*{swimmingPools}" th:value="${s}" th:text="${s}" />
+	                </select><br><br>
+	                
+		Amenities:  <input type="text" th:field="*{amenities}" /><br><br>
+	<input type="Submit" value="Edit Property" id="btn"/>	 
+	</form>
+	
+<br>
+</body>
+</html>
